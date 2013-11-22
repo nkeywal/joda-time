@@ -937,9 +937,10 @@ public class DateTimeFormatter {
      * @return the actual chronology
      */
     private Chronology selectChronology(Chronology chrono) {
-        chrono = DateTimeUtils.getChronology(chrono);
         if (iChrono != null) {
             chrono = iChrono;
+        }else {
+          chrono = DateTimeUtils.getChronology(chrono);
         }
         if (iZone != null) {
             chrono = chrono.withZone(iZone);
